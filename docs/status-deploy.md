@@ -99,12 +99,26 @@ Após o Khoj configurado, seguir `docs/implementacao-vps.md` Fase 3:
 
 ---
 
-## Segurança — pendências
+## Segurança — status (atualizado 2026-03-14)
 
-- [ ] Trocar senha root da VPS (a senha original foi compartilhada em texto)
-- [ ] Gerar nova ANTHROPIC_API_KEY na Anthropic e invalidar a que foi compartilhada em texto
-- [ ] Após OpenClaw rodando: bloquear porta 42110 no firewall e acessar Khoj só via proxy reverso (nginx + HTTPS)
-- [ ] Ativar ufw: liberar apenas portas 22022 (SSH) e as necessárias para OpenClaw/Telegram
+### Concluído ✅
+- [x] Senha root trocada (gerada aleatoriamente, salva em `/root/.root_pass` — só acessível via chave SSH)
+- [x] SSH: login por senha desabilitado (`PasswordAuthentication no`)
+- [x] SSH: root só por chave (`PermitRootLogin prohibit-password`)
+- [x] SSH: máximo 3 tentativas (`MaxAuthTries 3`)
+- [x] Firewall ufw ativo: `default deny incoming`, só porta 22022 aberta
+- [x] Docker configurado com `"iptables": false` — não burla o ufw
+- [x] Khoj bind em `127.0.0.1:42110` — inacessível da internet mesmo quando rodando
+- [x] Secrets fora do docker-compose: arquivo `/root/khoj/.env` com `chmod 600`
+- [x] Fail2ban: 3 tentativas falhas → ban de 1h na porta 22022
+- [x] Unattended-upgrades: patches de segurança automáticos
+
+### Pendente ⚠️
+- [ ] **Gerar nova ANTHROPIC_API_KEY** na console Anthropic e invalidar a exposta no chat
+  - Atualizar em `/root/khoj/.env` após gerar a nova
+- [ ] (Futuro) Se precisar acessar Khoj UI remotamente: usar SSH tunnel
+  `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52`
+  Nunca expor a porta 42110 diretamente
 
 ---
 
