@@ -47,13 +47,28 @@ Acesso SSH sem senha configurado (chave `~/.ssh/id_ed25519` do Mac já está em 
 - [ ] **PENDENTE:** Configurar Khoj pela UI (data sources, API key Anthropic, agente Mentor)
 - [ ] Serviços **parados intencionalmente** — não expostos
 
-### Fase 3 — NÃO INICIADA ⏳
+### Fase 3 — QUASE CONCLUÍDA ⚠️
 
-- [ ] OpenClaw instalado
-- [ ] Groq API key configurada
-- [ ] Telegram bot criado e pareado
-- [ ] Crons: briefing 8h, check-in 21h, revisão domingo 10h
-- [ ] HEARTBEAT ativo
+- [x] OpenClaw 2026.3.13 instalado (`/usr/bin/openclaw`)
+- [x] obsidian-cli wrapper criado em `/usr/local/bin/obsidian-cli` (skill Obsidian pronta)
+- [x] Groq API key configurada em `/root/.openclaw/auth-profiles.json`
+- [x] Telegram bot: **@AssistenteCabecaoBot** configurado (dmPolicy: pairing)
+  - Token em `/root/.telegram-bot-token`
+- [x] Gateway OpenClaw rodando via systemd user service (`openclaw-gateway.service`)
+  - `systemctl --user status openclaw-gateway.service`
+  - Porta interna: 18789 (só localhost)
+  - linger ativado (sobrevive sem sessão SSH)
+- [x] Crons configurados (UTC — Brasil UTC-3):
+  - Briefing 8h BRT → `0 11 * * *`
+  - Check-in 21h BRT → `0 0 * * *`
+  - Revisão domingo 10h BRT → `0 13 * * 0`
+- [ ] **PENDENTE: ANTHROPIC_API_KEY** — inserir nova key em:
+  - `/root/.openclaw/auth-profiles.json` (campo `anthropic:manual.token`)
+  - `/root/.config/systemd/user/openclaw-gateway.service.d/env.conf`
+  - Depois: `systemctl --user daemon-reload && systemctl --user restart openclaw-gateway.service`
+- [ ] **PENDENTE: Pairing Telegram** — abrir @AssistenteCabecaoBot e mandar `/start`
+- [ ] **PENDENTE: Configurar Khoj pela UI** (subir com `cd /root/khoj && docker compose up -d`)
+- [ ] Teste ponta a ponta: áudio no Telegram → transcrição Groq → vault → resposta
 
 ---
 
