@@ -242,3 +242,22 @@ Exames coletados durante internação na UTI. Quadro evolutivo de 3 coletas.
 | Plaquetas | 131.000/mm³ | 150.000-450.000 | 🔴 Abaixo |
 
 **Contexto:** exames durante fase aguda da internação. Creatinina elevada e em piora ao longo da internação (provável estresse renal agudo). PCR elevada esperada em fase aguda. Plaquetas abaixo do normal — transitório, voltou ao normal nos exames posteriores.
+
+
+---
+
+## 🧪 LABORATÓRIO UTI — 25/05/2025 (Hospital Vila Nova Star — Dia 3)
+
+| Exame | Resultado | Ref. | Status |
+|-------|-----------|------|--------|
+| Creatinina | 1,50 mg/dL | 0,7-1,2 | 🔴 Elevada (estável vs dia anterior) |
+| Potássio | 4,3 mmol/L | 3,8-4,9 | ✅ Normal |
+| Sódio | 140 mmol/L | 137-143 | ✅ Normal |
+| Ureia | 23,0 mg/dL | 19-43 | ✅ Normal |
+| Cálcio Iônico | 1,29 mmol/L | 1,15-1,29 | ✅ Normal (limite superior) |
+| Magnésio | 1,60 mg/dL | 1,6-2,3 | ✅ Normal (limite inferior) |
+| Hemoglobina | 15,3 g/dL | 13-18 | ✅ Normal |
+| Leucócitos | 7.700/mm³ | 4.000-11.300 | ✅ Normal |
+| Plaquetas | 139.000/mm³ | 150.000-450.000 | 🔴 Abaixo |
+
+**Obs:** Creatinina manteve-se em 1,50 — estabilizou mas não melhorou ainda durante a internação. Plaquetas abaixo do normal pelo 2º dia consecutivo (131k → 139k). Eletrólitos normalizando.
