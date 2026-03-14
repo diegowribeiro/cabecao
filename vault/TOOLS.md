@@ -30,37 +30,38 @@ Instruções para o agente sobre onde e como gravar conteúdo no vault.
 ## Como salvar — use o script
 
 **Script:** `/opt/cabecao/scripts/save-note.sh`
-**Assinatura:** `bash /opt/cabecao/scripts/save-note.sh <tipo> <caminho-relativo> "<conteudo>"`
+**Assinatura:** `/opt/cabecao/scripts/save-note.sh <tipo> <caminho-relativo> "<conteudo>"`
+**Importante:** chame o script diretamente — não use `bash` na frente.
 
 O script faz append (inbox/journal/task) ou cria arquivo (meeting/idea) + git commit + push automático.
 
 ### Inbox (append)
 ```bash
-bash /opt/cabecao/scripts/save-note.sh inbox "0-Inbox/Inbox.md" \
+/opt/cabecao/scripts/save-note.sh inbox "0-Inbox/Inbox.md" \
   "## $(date '+%Y-%m-%d %H:%M')\n<texto>\n#tag1 #tag2"
 ```
 
 ### Journal (criar ou append no dia)
 ```bash
-bash /opt/cabecao/scripts/save-note.sh journal "Journal/$(date '+%Y-%m-%d').md" \
+/opt/cabecao/scripts/save-note.sh journal "Journal/$(date '+%Y-%m-%d').md" \
   "---\ndate: $(date '+%Y-%m-%d')\ntags: [journal]\nsource: telegram\n---\n\n## $(date '+%H:%M')\n\n<texto>"
 ```
 
 ### Meeting (novo arquivo por reunião)
 ```bash
-bash /opt/cabecao/scripts/save-note.sh meeting "Meetings/$(date '+%Y-%m-%d')-<titulo>.md" \
+/opt/cabecao/scripts/save-note.sh meeting "Meetings/$(date '+%Y-%m-%d')-<titulo>.md" \
   "---\ndate: $(date '+%Y-%m-%d')\ntype: meeting\nparticipants: [<nomes>]\ntags: [meeting]\nsource: telegram\n---\n\n## Resumo\n\n<texto>\n\n## Decisões\n\n## Action Items\n"
 ```
 
 ### Idea (novo arquivo)
 ```bash
-bash /opt/cabecao/scripts/save-note.sh idea "3-Resources/ideas/$(date '+%Y-%m-%d')-<titulo>.md" \
+/opt/cabecao/scripts/save-note.sh idea "3-Resources/ideas/$(date '+%Y-%m-%d')-<titulo>.md" \
   "---\ndate: $(date '+%Y-%m-%d')\ntype: idea\ntags: [idea]\nsource: telegram\n---\n\n<texto>"
 ```
 
 ### Task (append no Inbox)
 ```bash
-bash /opt/cabecao/scripts/save-note.sh task "0-Inbox/Inbox.md" \
+/opt/cabecao/scripts/save-note.sh task "0-Inbox/Inbox.md" \
   "## $(date '+%Y-%m-%d %H:%M')\n- [ ] <tarefa>\n#task"
 ```
 
