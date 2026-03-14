@@ -183,3 +183,16 @@ Atualizado: 2026-03-14
 
 *Fonte: laudos Lavoisier (mai/2021, jan/2025, fev/2026) + exames emergenciais Albert Einstein (jul/2025)*
 *Este arquivo é para acompanhamento pessoal. A interpretação e conduta são atos médicos.*
+
+
+---
+
+## 🦠 PCR COVID-19 — 13/08/2020 (São Luiz Itaim)
+
+| Exame | Resultado | Método |
+|-------|-----------|--------|
+| SARS-CoV-2 detecção por PCR | **NÃO DETECTADO (NEGATIVO)** ✅ | RT-PCR |
+
+- Material: raspado trato respiratório
+- Solicitante: Dr. Fernando Sanz Sogayar
+- Liberado: 14/08/2020
