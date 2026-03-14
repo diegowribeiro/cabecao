@@ -47,7 +47,7 @@ Acesso SSH sem senha configurado (chave `~/.ssh/id_ed25519` do Mac já está em 
 - [ ] **PENDENTE:** Configurar Khoj pela UI (data sources, API key Anthropic, agente Mentor)
 - [ ] Serviços **parados intencionalmente** — não expostos
 
-### Fase 3 — QUASE CONCLUÍDA ⚠️
+### Fase 3 — CONCLUÍDA ✅
 
 - [x] OpenClaw 2026.3.13 instalado (`/usr/bin/openclaw`)
 - [x] obsidian-cli wrapper criado em `/usr/local/bin/obsidian-cli` (skill Obsidian pronta)
@@ -62,13 +62,13 @@ Acesso SSH sem senha configurado (chave `~/.ssh/id_ed25519` do Mac já está em 
   - Briefing 8h BRT → `0 11 * * *`
   - Check-in 21h BRT → `0 0 * * *`
   - Revisão domingo 10h BRT → `0 13 * * 0`
-- [ ] **PENDENTE: ANTHROPIC_API_KEY** — inserir nova key em:
-  - `/root/.openclaw/auth-profiles.json` (campo `anthropic:manual.token`)
-  - `/root/.config/systemd/user/openclaw-gateway.service.d/env.conf`
-  - Depois: `systemctl --user daemon-reload && systemctl --user restart openclaw-gateway.service`
-- [ ] **PENDENTE: Pairing Telegram** — abrir @AssistenteCabecaoBot e mandar `/start`
-- [ ] **PENDENTE: Configurar Khoj pela UI** (subir com `cd /root/khoj && docker compose up -d`)
-- [ ] Teste ponta a ponta: áudio no Telegram → transcrição Groq → vault → resposta
+- [x] ANTHROPIC_API_KEY configurada via env no systemd
+- [x] Pairing Telegram aprovado — @diegowribeiro pareado com @AssistenteCabecaoBot
+- [x] Teste bem-sucedido: bot respondeu 3 mensagens no Telegram
+- [ ] **PENDENTE: Configurar Khoj pela UI** — acesse via SSH tunnel:
+  `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52`
+  Depois abra http://localhost:42110 (admin@cabecao.local / cabecao2026)
+- [ ] Teste de áudio: mandar áudio no Telegram → transcrição Groq → salvo no vault
 
 ---
 
