@@ -1,7 +1,7 @@
 # Status do Deploy — Cabeção
 
-**Última atualização:** 2026-03-14
-**Sessão:** Setup inicial VPS
+**Última atualização:** 2026-03-14 (sessão 2)
+**Status geral:** TUDO CONCLUÍDO E OPERACIONAL ✅
 
 ---
 
@@ -12,128 +12,69 @@
 | IP | `129.121.36.52` |
 | Porta SSH | `22022` |
 | Usuário | `root` |
+| Acesso Mac | `ssh cabecao` (alias em `~/.ssh/config`) |
 | OS | Ubuntu 22.04 LTS |
 | RAM | 3.8 GB |
-| Disco | 99 GB (85 GB livres) |
-| Repo clonado em | `/opt/cabecao` |
-| Vault em | `/opt/cabecao/vault` |
-| Khoj docker-compose | `/root/khoj/docker-compose.yml` |
-
-Acesso SSH sem senha configurado (chave `~/.ssh/id_ed25519` do Mac já está em `authorized_keys` da VPS).
+| Disco | 99 GB |
+| Repo | `/opt/cabecao` |
+| Vault | `/opt/cabecao/vault` |
 
 ---
 
-## O que foi feito
+## Serviços rodando
 
-### Fase 1 — CONCLUÍDA ✅
-
-- [x] SSH sem senha do Mac para a VPS
-- [x] Deploy key `vps-cabecao` gerada em `~/.ssh/cabecao_deploy` na VPS e adicionada no GitHub com write access
-- [x] Node.js 22 instalado
-- [x] Primeiro push do repo `cabecao` para `github.com/diegowribeiro/cabecao`
-- [x] Repo clonado em `/opt/cabecao`; vault com estrutura completa em `/opt/cabecao/vault`
-- [x] Git configurado: `user.email = vps@cabecao`, `user.name = Cabecao VPS`
-- [x] Cron a cada 15 min: `vps-cabecao-git-push.sh` → log em `/root/cabecao-sync.log`
-
-### Fase 2 — PARCIALMENTE CONCLUÍDA ⚠️
-
-- [x] Docker CE + docker-compose-plugin instalados
-- [x] Khoj rodando via Docker Compose em `/root/khoj/`
-  - Imagem DB: `pgvector/pgvector:pg16` (necessário para a extensão vector)
-  - Comando override: `--host 0.0.0.0` (sem isso o Khoj só escuta em 127.0.0.1 dentro do container)
-  - Vault montado em `/vault` (readonly) dentro do container
-  - Admin: `admin@cabecao.local` / `cabecao2026`
-- [x] Khoj respondendo em `http://129.121.36.52:42110` — testado e OK
-- [ ] **PENDENTE:** Configurar Khoj pela UI (data sources, API key Anthropic, agente Mentor)
-- [ ] Serviços **parados intencionalmente** — não expostos
-
-### Fase 3 — CONCLUÍDA ✅
-
-- [x] OpenClaw 2026.3.13 instalado (`/usr/bin/openclaw`)
-- [x] obsidian-cli wrapper criado em `/usr/local/bin/obsidian-cli` (skill Obsidian pronta)
-- [x] Groq API key configurada em `/root/.openclaw/auth-profiles.json`
-- [x] Telegram bot: **@AssistenteCabecaoBot** configurado (dmPolicy: pairing)
-  - Token em `/root/.telegram-bot-token`
-- [x] Gateway OpenClaw rodando via systemd user service (`openclaw-gateway.service`)
-  - `systemctl --user status openclaw-gateway.service`
-  - Porta interna: 18789 (só localhost)
-  - linger ativado (sobrevive sem sessão SSH)
-- [x] Crons configurados (UTC — Brasil UTC-3):
-  - Briefing 8h BRT → `0 11 * * *`
-  - Check-in 21h BRT → `0 0 * * *`
-  - Revisão domingo 10h BRT → `0 13 * * 0`
-- [x] ANTHROPIC_API_KEY configurada via env no systemd
-- [x] Pairing Telegram aprovado — @diegowribeiro pareado com @AssistenteCabecaoBot
-- [x] Teste bem-sucedido: bot respondeu 3 mensagens no Telegram
-- [ ] **PENDENTE: Configurar Khoj pela UI** — acesse via SSH tunnel:
-  `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52`
-  Depois abra http://localhost:42110 (admin@cabecao.local / cabecao2026)
-- [ ] Teste de áudio: mandar áudio no Telegram → transcrição Groq → salvo no vault
+| Serviço | Status | Como verificar |
+|---------|--------|----------------|
+| OpenClaw Gateway | ✅ ativo (systemd) | `systemctl --user status openclaw-gateway.service` |
+| Khoj (Docker) | ✅ ativo | `cd /root/khoj && docker compose ps` |
+| Cron vault sync | ✅ a cada 30min | `crontab -l` |
+| Cron Garmin sync | ✅ todo dia 7h | `crontab -l` |
 
 ---
 
-## Como retomar
+## Crons configurados
 
-### 1. Subir os serviços do Khoj
+### OpenClaw (6 crons)
 
-```bash
-ssh -p 22022 root@129.121.36.52
-cd /root/khoj && docker compose up -d
-# aguardar ~30s e verificar:
-docker compose ps
-curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:42110/api/health
-```
+| Nome | Horário (BRT) | O que faz |
+|------|--------------|-----------|
+| Briefing 8h | Todo dia 8h | Inglês do dia + tarefas do vault + intenção do dia |
+| Check-in 21h | Todo dia 21h | Check-in noturno + salva journal + inglês na resposta |
+| Revisão semanal | Domingo 10h | Loops abertos + padrões da semana + os 3 elefantes |
+| Loop check quarta | Quarta 20h | Cobra tarefas com +5 dias sem fechar |
+| Sessão de negócio | Sábado 10h | Renda passiva/negócio — progresso e próximo passo |
+| Análise mensal | Dia 1 de cada mês 9h | Padrões de humor, sabotadores, conquistas, síntese |
 
-### 2. Configurar o Khoj pela UI
+### Sistema (crontab)
 
-Acesse: **http://129.121.36.52:42110**
-Login: `admin@cabecao.local` / senha: `cabecao2026`
-
-Passos:
-1. **Settings → AI Models** → Add → Anthropic → colar `ANTHROPIC_API_KEY` → modelo `claude-sonnet-4-5-20250929`
-2. **Settings → Data Sources** → Add → Files → path `/vault` → tipo Markdown → reindexação 30 min → salvar e aguardar indexação
-3. **Agents** → New Agent → nome "Mentor Pessoal" → system prompt abaixo → Knowledge base = vault indexado → tools: web search
-
-System prompt sugerido para o agente Mentor:
-```
-Você é o Cabeção, assistente pessoal de Diego. Fale sempre em português.
-Você tem acesso ao vault pessoal do Diego (notas, projetos, áreas de vida, journal, reuniões).
-Aja como um conselheiro pessoal: reflita sobre padrões, conecte informações do vault, faça perguntas que ajudem Diego a pensar com mais clareza.
-Seja direto, honesto e sem enrolação. Quando relevante, cite notas do vault usando [[wikilinks]].
-```
-
-### 3. Fase 3 — OpenClaw
-
-Após o Khoj configurado, seguir `docs/implementacao-vps.md` Fase 3:
-- Instalar OpenClaw
-- Configurar `ANTHROPIC_API_KEY` e `GROQ_API_KEY` no ambiente
-- Criar Telegram bot via @BotFather → pegar token
-- Configurar `config/openclaw-vault.example.yaml` com os tokens
-- Adicionar os 3 crons
-- Teste de ponta a ponta: áudio no Telegram → transcrição → vault → resposta
+| Schedule | Script | O que faz |
+|----------|--------|-----------|
+| `*/30 * * * *` | `vps-cabecao-git-push.sh` | Git commit+push do vault → GitHub |
+| `0 7 * * *` | `garmin-sync.py` | Busca dados Garmin do dia anterior → vault |
 
 ---
 
-## Segurança — status (atualizado 2026-03-14)
+## Configurações aplicadas
 
-### Concluído ✅
-- [x] Senha root trocada (gerada aleatoriamente, salva em `/root/.root_pass` — só acessível via chave SSH)
-- [x] SSH: login por senha desabilitado (`PasswordAuthentication no`)
-- [x] SSH: root só por chave (`PermitRootLogin prohibit-password`)
-- [x] SSH: máximo 3 tentativas (`MaxAuthTries 3`)
-- [x] Firewall ufw ativo: `default deny incoming`, só porta 22022 aberta
-- [x] Docker configurado com `"iptables": false` — não burla o ufw
-- [x] Khoj bind em `127.0.0.1:42110` — inacessível da internet mesmo quando rodando
-- [x] Secrets fora do docker-compose: arquivo `/root/khoj/.env` com `chmod 600`
-- [x] Fail2ban: 3 tentativas falhas → ban de 1h na porta 22022
-- [x] Unattended-upgrades: patches de segurança automáticos
+### OpenClaw
+- Modelo: `claude-sonnet-4-6`
+- Telegram: `@AssistenteCabecaoBot`, pareado com `@diegowribeiro` (ID 156600487)
+- Áudio: Groq `whisper-large-v3-turbo` (transcrição)
+- Exec allowlist: somente `/opt/cabecao/scripts/save-note.sh`
+- Workspace files: `SOUL.md`, `USER.md`, `IDENTITY.md`, `AGENTS.md`, `TOOLS.md`, `HEARTBEAT.md`, `BOOTSTRAP.md`
 
-### Pendente ⚠️
-- [ ] **Gerar nova ANTHROPIC_API_KEY** na console Anthropic e invalidar a exposta no chat
-  - Atualizar em `/root/khoj/.env` após gerar a nova
-- [ ] (Futuro) Se precisar acessar Khoj UI remotamente: usar SSH tunnel
-  `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52`
-  Nunca expor a porta 42110 diretamente
+### Khoj (RAG)
+- Modelo: `claude-sonnet-4-5-20250929`
+- Data source: `/vault/**/*.md` (reindexação automática)
+- API token: `9993a591-3d74-4ae0-9c70-afc4c1df5a17`
+- Acesso UI (via tunnel): `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52` → `http://localhost:42110`
+- Admin: `admin@cabecao.local` / `cabecao2026`
+
+### Garmin
+- Credenciais: `/root/.garmin-credentials` (chmod 600)
+- Display name: `_diegoribeiro_`
+- Dados salvos em: `vault/2-Areas/Saude/garmin/YYYY-MM-DD.md`
+- Log: `/root/garmin-sync.log`
 
 ---
 
@@ -141,8 +82,76 @@ Após o Khoj configurado, seguir `docs/implementacao-vps.md` Fase 3:
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `/root/khoj/docker-compose.yml` | Config do Khoj (já com fixes: pgvector + --host 0.0.0.0) |
-| `/root/.ssh/cabecao_deploy` | Chave SSH da VPS para o GitHub |
+| `/root/.openclaw/openclaw.json` | Config principal do OpenClaw |
+| `/root/.openclaw/exec-approvals.json` | Allowlist de execução (só save-note.sh) |
+| `/root/.openclaw/workspace/SOUL.md` | Personalidade + modo crise + inglês integrado |
+| `/root/.openclaw/workspace/USER.md` | Perfil completo do Diego |
+| `/root/.openclaw/workspace/IDENTITY.md` | Identidade do Cabeção |
+| `/root/.openclaw/agents/main/agent/auth-profiles.json` | API keys Anthropic e Groq |
+| `/root/.config/systemd/user/openclaw-gateway.service.d/env.conf` | Env vars do gateway |
+| `/root/.telegram-bot-token` | Token do bot Telegram |
+| `/root/khoj/docker-compose.yml` | Config do Khoj |
+| `/root/khoj/.env` | Secrets do Khoj (chmod 600) |
+| `/root/.garmin-credentials` | Credenciais Garmin Connect (chmod 600) |
 | `/root/cabecao-sync.log` | Log do cron de sync do vault |
-| `/opt/cabecao/vault/` | Vault Obsidian |
-| `/opt/cabecao/scripts/vps-cabecao-git-push.sh` | Script de sync |
+| `/root/garmin-sync.log` | Log do sync Garmin |
+| `/opt/cabecao/scripts/save-note.sh` | Salva nota no vault + git push + reindex Khoj |
+| `/opt/cabecao/scripts/garmin-sync.py` | Sync dados Garmin para vault |
+| `/opt/cabecao/vault/` | Vault Obsidian completo |
+
+---
+
+## Segurança
+
+- SSH: só chave Ed25519, sem senha, porta 22022
+- `ufw`: default deny, só porta 22022 aberta
+- Docker: `iptables: false` (não burla ufw)
+- Khoj: bind em `127.0.0.1:42110`
+- Fail2ban: 3 tentativas → ban 1h
+- Telegram: `dmPolicy: pairing`, só ID 156600487
+- Exec allowlist: somente `/opt/cabecao/scripts/save-note.sh`
+- `save-note.sh`: proteção contra path traversal (`../`)
+- Secrets: todos `chmod 600`, fora do vault e do repo
+
+---
+
+## Comandos úteis
+
+```bash
+# Acessar VPS
+ssh cabecao
+
+# Status serviços
+systemctl --user status openclaw-gateway.service
+cd /root/khoj && docker compose ps
+
+# Reiniciar OpenClaw
+systemctl --user restart openclaw-gateway.service
+
+# Forçar reindex Khoj
+curl -H "Authorization: Bearer 9993a591-3d74-4ae0-9c70-afc4c1df5a17" \
+  "http://localhost:42110/api/update?force=true&t=markdown"
+
+# Testar Garmin sync
+python3 /opt/cabecao/scripts/garmin-sync.py
+
+# Ver logs
+journalctl --user -u openclaw-gateway.service -f
+tail -f /root/garmin-sync.log
+tail -f /root/cabecao-sync.log
+
+# Vault: último git log
+cd /opt/cabecao/vault && git log --oneline -10
+```
+
+---
+
+## Troubleshooting
+
+| Problema | O que fazer |
+|----------|-------------|
+| Bot não responde | `systemctl --user restart openclaw-gateway.service` |
+| Khoj parado | `cd /root/khoj && docker compose up -d` |
+| Vault não sincroniza | `cat /root/cabecao-sync.log` |
+| Garmin sem dados | `python3 /opt/cabecao/scripts/garmin-sync.py` manualmente; checar `/root/garmin-sync.log` |
+| API key expirou | Atualizar em `auth-profiles.json` + `env.conf` → reiniciar OpenClaw |
