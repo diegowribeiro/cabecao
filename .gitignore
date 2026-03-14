@@ -1,0 +1,17 @@
+# Obsidian (manter no vault no repo, mas ignorar workspaces locais)
+vault/.obsidian/workspace.json
+vault/.obsidian/workspace-mobile.json
+vault/.trash/
+vault/.git-sync.lock
+
+# Env e secrets (nunca commitar)
+.env
+.env.local
+*.pem
+
+# Lock do script de sync (VPS)
+.git-sync.lock
+
+# OS
+.DS_Store
+Thumbs.db

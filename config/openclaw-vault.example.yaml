@@ -1,0 +1,31 @@
+# Exemplo de configuração OpenClaw para o Cabeção
+# Copie trechos relevantes para ~/.openclaw/config.yaml na VPS
+# Ajuste paths e tokens conforme seu ambiente.
+
+# Transcrição: Groq (custo-benefício, sem GPU)
+# tools:
+#   media:
+#     audio:
+#       enabled: true
+#       maxBytes: 20971520   # 20 MB
+#       timeoutSeconds: 120
+#       models:
+#         - provider: groq
+#           model: whisper-large-v3-turbo
+
+# Variáveis de ambiente necessárias:
+#   ANTHROPIC_API_KEY=sk-ant-...
+#   GROQ_API_KEY=gsk_...
+
+# Telegram
+# channels:
+#   telegram:
+#     enabled: true
+#     botToken: "SEU_TOKEN"
+#     dmPolicy: pairing
+#     groups:
+#       "*":
+#         requireMention: true
+
+# O vault (TOOLS.md, PERSONALITY.md, HEARTBEAT.md) deve estar no path
+# que o OpenClaw usa para skills/obsidian, ex.: /var/lib/obsidian-vault
