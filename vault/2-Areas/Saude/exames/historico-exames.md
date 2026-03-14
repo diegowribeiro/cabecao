@@ -196,3 +196,23 @@ Atualizado: 2026-03-14
 - Material: raspado trato respiratório
 - Solicitante: Dr. Fernando Sanz Sogayar
 - Liberado: 14/08/2020
+
+
+---
+
+## 🧠 TC CRÂNIO + ANGIOTC — 22/05/2025 (São Luiz — Episódio AVC-like Inicial)
+
+| Achado | Resultado |
+|--------|-----------|
+| Hemorragia subaracnoide | ❌ Não |
+| Hemorragia subdural | ❌ Não |
+| Hemorragia intraparenquimatosa | ❌ Não |
+| Isquemia recente | ❌ Não |
+| ASPECTS (ACM) | **10/10** (máximo = normal) |
+| Oclusão de grande tronco arterial | ❌ Não |
+| Isquemia antiga | ❌ Não |
+| Variação anatômica | Origem comum do tronco braquiocefálico e carótida comum esquerda (variação normal) |
+
+**Conclusão: sem sinais de AVC isquêmico ou hemorrágico.**
+Solicitante: Dr. João Guilherme Alencar Silva
+Protocolo AVC — exame inicial do episódio de maio/2025.
