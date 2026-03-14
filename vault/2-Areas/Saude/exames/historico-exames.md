@@ -296,3 +296,24 @@ Painel extenso de investigação etiológica do episódio. Testaram trombofilia,
 **Conclusão parcial:** Todos os marcadores de trombofilia autoimune e vasculite negativos. Nenhuma causa autoimune ou de hipercoagulabilidade identificada para explicar o episódio.
 
 _Nota: 27 páginas — registro parcial dos primeiros exames disponíveis na transcrição._
+
+
+---
+
+## 🧪 LABORATÓRIO UTI — 26/05/2025 (Vila Nova Star — Dia 4)
+
+| Exame | Resultado | Ref. | Status |
+|-------|-----------|------|--------|
+| Creatinina | 1,60 mg/dL | 0,7-1,2 | 🔴 Piorou (1,50→1,60) |
+| CPK | 82 U/L | 55-170 | ✅ Normal |
+| Potássio | 4,5 mmol/L | 3,8-4,9 | ✅ Normal |
+| Sódio | 136 mmol/L | 137-143 | ⚠️ Limítrofe baixo |
+| Ureia | 26,0 mg/dL | 19-43 | ✅ Normal |
+| Magnésio | 1,60 mg/dL | 1,6-2,3 | ✅ Normal (limite) |
+| Hemoglobina | 15,0 g/dL | 13-18 | ✅ Normal |
+| Leucócitos | 10.500/mm³ | 4.000-11.300 | ⚠️ Limite superior |
+| Neutrófilos | 64% / 6.720/mm³ | 1.800-7.800 | ✅ Normal (% subindo) |
+| Linfócitos | 29,4% | — | ✅ Normalizando |
+| Plaquetas | 134.000/mm³ | 150.000-450.000 | 🔴 Abaixo (3º dia consecutivo) |
+
+**Obs:** Creatinina piorou levemente — pico da disfunção renal aguda. Leucocitose no limite com neutrofilia sugere resposta inflamatória/estresse. Plaquetopenia persistindo pelo 3º dia.
