@@ -317,3 +317,31 @@ _Nota: 27 páginas — registro parcial dos primeiros exames disponíveis na tra
 | Plaquetas | 134.000/mm³ | 150.000-450.000 | 🔴 Abaixo (3º dia consecutivo) |
 
 **Obs:** Creatinina piorou levemente — pico da disfunção renal aguda. Leucocitose no limite com neutrofilia sugere resposta inflamatória/estresse. Plaquetopenia persistindo pelo 3º dia.
+
+
+---
+
+## 🧪 LABORATÓRIO UTI — 27/05/2025 (Vila Nova Star — Dia 5)
+
+| Exame | Resultado | Ref. | Status |
+|-------|-----------|------|--------|
+| Creatinina | 1,60 mg/dL | 0,7-1,2 | 🔴 Estável no pico |
+| Potássio | 4,3 mmol/L | 3,8-4,9 | ✅ Normal |
+| Sódio | 137 mmol/L | 137-143 | ✅ Normalizou |
+| Ureia | 23,0 mg/dL | 19-43 | ✅ Normal |
+| PCR | 2,30 mg/dL | <0,8 saudável | 🔴 Subiu (1,08 → 2,30) |
+| Leucócitos | 8.300/mm³ | 4.000-11.300 | ✅ Normal |
+| Neutrófilos | 66,5% | — | ⚠️ Neutrofilia (resposta inflamatória) |
+| Plaquetas | 133.000/mm³ | 150.000-450.000 | 🔴 Abaixo (4º dia) |
+
+### Curva evolutiva completa da internação (creatinina e PCR)
+
+| Data | Creatinina | PCR | Sódio |
+|------|------------|-----|-------|
+| 23/05 08:15 | 1,40 | — | 138 |
+| 24/05 04:45 | 1,50 | 1,08 | 136 |
+| 25/05 05:07 | 1,50 | — | 140 |
+| 26/05 04:27 | 1,60 | — | 136 |
+| 27/05 05:00 | **1,60** | **2,30** | 137 |
+
+**Obs:** PCR dobrou do dia 3 ao dia 5 (1,08 → 2,30) — inflamação sistêmica em pico. Creatinina estabilizou no pico. Plaquetas em queda progressiva durante toda a internação (131k → 133k → 134k).
