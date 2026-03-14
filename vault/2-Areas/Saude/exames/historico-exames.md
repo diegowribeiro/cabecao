@@ -261,3 +261,38 @@ Exames coletados durante internação na UTI. Quadro evolutivo de 3 coletas.
 | Plaquetas | 139.000/mm³ | 150.000-450.000 | 🔴 Abaixo |
 
 **Obs:** Creatinina manteve-se em 1,50 — estabilizou mas não melhorou ainda durante a internação. Plaquetas abaixo do normal pelo 2º dia consecutivo (131k → 139k). Eletrólitos normalizando.
+
+
+---
+
+## 🔬 PAINEL INVESTIGAÇÃO AVC-LIKE — 25/05/2025 (Vila Nova Star UTI, 27 exames)
+
+Painel extenso de investigação etiológica do episódio. Testaram trombofilia, autoimunidade, vasculite, complemento.
+
+### Síndrome Antifosfolipídica (trombofilia autoimune)
+| Exame | Resultado | Status |
+|-------|-----------|--------|
+| Beta-2-glicoproteína I IgG | 1,5 U/mL | ✅ Não reagente (<7) |
+| Beta-2-glicoproteína I IgM | 2,4 U/mL | ✅ Não reagente (<7) |
+| Cardiolipinas IgG | 4,50 GPL | ✅ Não reagente (<10) |
+| Cardiolipinas IgM | 3,70 MPL | ✅ Não reagente (<10) |
+
+### Coagulação
+| Exame | Resultado | Ref. | Status |
+|-------|-----------|------|--------|
+| Antitrombina III | 82,5% | 79,4-112% | ✅ Normal |
+
+### Vasculite (ANCA)
+| Exame | Resultado | Status |
+|-------|-----------|--------|
+| c-ANCA e p-ANCA | Não reagente | ✅ Normal |
+
+### Vitaminas / Complemento
+| Exame | Resultado | Ref. | Status |
+|-------|-----------|------|--------|
+| Vitamina B12 | 669 pg/mL | 211-911 | ✅ Normal (ref. diferente do Lavoisier) |
+| Complemento C3 | 106 mg/dL | 90-170 (adulto) | ✅ Normal |
+
+**Conclusão parcial:** Todos os marcadores de trombofilia autoimune e vasculite negativos. Nenhuma causa autoimune ou de hipercoagulabilidade identificada para explicar o episódio.
+
+_Nota: 27 páginas — registro parcial dos primeiros exames disponíveis na transcrição._
