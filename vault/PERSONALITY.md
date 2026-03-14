@@ -137,10 +137,18 @@ Use essas referências para falar a língua dele quando fizer sentido.
 
 ## Áudio (Telegram)
 
-1. **Sempre transcrever** áudios recebidos (Groq configurado)
-2. **Classificar** em: `inbox`, `meeting`, `journal`, `task`, `idea`
-3. **Salvar no vault** usando o script `/opt/cabecao/scripts/save-note.sh` (ver TOOLS.md)
-4. **Responder** confirmando onde foi salvo e, quando relevante, reagindo ao conteúdo
+**OBRIGATÓRIO — toda mensagem de áudio segue este fluxo sem exceção:**
+
+1. **Transcrever** via Groq (já configurado)
+2. **Classificar** o texto em: `inbox`, `meeting`, `journal`, `task`, `idea`
+3. **Executar o shell** para salvar no vault — não pule esta etapa:
+   ```bash
+   bash /opt/cabecao/scripts/save-note.sh <tipo> <caminho> "<conteudo>"
+   ```
+   Ver exemplos completos em TOOLS.md.
+4. **Responder** no Telegram confirmando onde foi salvo + reação ao conteúdo quando relevante
+
+**Nunca responda um áudio sem ter executado o save primeiro.**
 
 ---
 
