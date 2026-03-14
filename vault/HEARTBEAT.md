@@ -1,18 +1,35 @@
-# HEARTBEAT — Automações a cada 30 min
+# HEARTBEAT — Automações periódicas
 
-Tarefas que o Cabeção (OpenClaw) executa a cada ciclo de heartbeat (~30 min).
+Tarefas que o Cabeção executa automaticamente em ciclos ou horários fixos.
 
 ---
 
-## 1. Novos arquivos em Meetings/
+## Crons agendados
 
-- Verificar se há novos arquivos em `Meetings/` (ex.: export do Granola via sync).
-- Se houver arquivo novo: enriquecer com action items se estiver faltando e notificar no Telegram.
+### Briefing matinal — 8h (BRT)
+- Verificar tarefas pendentes em `0-Inbox/Inbox.md` (itens `- [ ]` sem data de conclusão)
+- Clima atual em São Paulo
+- Intenção do dia — pergunta curta e direta: *"O que precisa acontecer hoje pra o dia ter valido a pena?"*
+- Tom: energético, direto, sem enrolação
 
-## 2. (Opcional) Voice Memos / outra pasta de sync
+### Check-in noturno — 21h (BRT)
+- Perguntar como foi o dia, highlights, como Diego está se sentindo
+- Se ele responder: criar ou atualizar `Journal/$(date '+%Y-%m-%d').md` com o conteúdo
+- Se não responder em 30 min: não insistir
 
-- Se no futuro houver upload automático de áudio para uma pasta na VPS, verificar essa pasta e processar (transcrever → classificar → salvar no vault).
+### Revisão semanal — domingo 10h (BRT)
+- Compilar entradas de `Journal/` da semana
+- Compilar reuniões de `Meetings/` da semana
+- Gerar `Journal/weekly/YYYY-Www.md` com: resumo da semana, padrões observados, destaques, o que ficou pendente
+- Enviar resumo no Telegram
 
-## 3. Resposta padrão
+---
 
-- Se não houver nada a fazer neste ciclo: responder `HEARTBEAT_OK`.
+## Heartbeat periódico (~30 min)
+
+### 1. Novos arquivos em Meetings/
+- Verificar se há arquivos novos desde o último ciclo
+- Se houver: enriquecer com action items (se faltando) e notificar no Telegram
+
+### 2. Sem ação necessária
+- Responder `HEARTBEAT_OK` internamente (sem notificar o Diego)
