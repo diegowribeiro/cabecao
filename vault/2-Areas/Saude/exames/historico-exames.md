@@ -216,3 +216,29 @@ Atualizado: 2026-03-14
 **Conclusão: sem sinais de AVC isquêmico ou hemorrágico.**
 Solicitante: Dr. João Guilherme Alencar Silva
 Protocolo AVC — exame inicial do episódio de maio/2025.
+
+
+---
+
+## 🧪 LABORATÓRIO UTI — 23-24/05/2025 (Hospital Vila Nova Star — Internação AVC-like)
+
+Exames coletados durante internação na UTI. Quadro evolutivo de 3 coletas.
+
+| Exame | 22/05 20:48 | 23/05 08:15 | 24/05 04:45 | Ref. | Status |
+|-------|-------------|-------------|-------------|------|--------|
+| Creatinina | 1,30 | 1,40 | 1,50 | 0,7-1,2 | 🔴 Subindo durante internação |
+| Potássio | 3,9 | 4,1 | 4,0 | 3,8-4,9 | ✅ Normal |
+| Sódio | 134 | 138 | 136 | 137-143 | ⚠️ Limítrofe |
+| Ureia | 40,0 | 29,0 | 25,0 | 19-43 | ✅ Normal |
+| PCR Ultrassensível | — | — | 1,08 mg/dL | <0,8 saudável | 🔴 Elevada (fase aguda) |
+
+### Hemograma (24/05/2025)
+| Parâmetro | Resultado | Ref. | Status |
+|-----------|-----------|------|--------|
+| Hemácias | 5,03 mi/mm³ | 4,52-6,0 | ✅ |
+| Hemoglobina | 14,8 g/dL | 13-18 | ✅ |
+| Leucócitos | 6.700/mm³ | 4.000-11.300 | ✅ |
+| Linfócitos | 46,4% / 3.108/mm³ | 1.000-4.800 (abs) | ✅ abs / ⚠️ % |
+| Plaquetas | 131.000/mm³ | 150.000-450.000 | 🔴 Abaixo |
+
+**Contexto:** exames durante fase aguda da internação. Creatinina elevada e em piora ao longo da internação (provável estresse renal agudo). PCR elevada esperada em fase aguda. Plaquetas abaixo do normal — transitório, voltou ao normal nos exames posteriores.
