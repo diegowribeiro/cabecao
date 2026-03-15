@@ -8,3 +8,6 @@ Pensamentos rápidos, ideias soltas e lembretes. Áudios do Telegram classificad
 ## 2026-03-14 17:29
 Preencher as tarefas do projeto estratégico na segunda-feira.
 #task
+## 2026-03-15 09:13
+- [ ] Preencher tarefas do projeto estratégico (Iugu) — agendar para segunda-feira 16/03
+#task #iugu #trabalho
