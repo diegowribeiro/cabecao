@@ -8,3 +8,12 @@
 #alimentacao #cafe-da-manha #pos-treino
 
 **Suplementação:** Creatina 5g
+
+
+## 2026-03-16 12:39 — Almoço (quebra do jejum ~17h)
+- **Prato:** Peixe grelhado/empanado leve (~200g) + 2 ovos cozidos + couve refogada + legumes cozidos (cenoura, chuchu, abóbora)
+- **Calorias estimadas:** ~520 kcal
+- **Macros:** P: ~52g | C: ~25g | G: ~22g
+- **Nota:** 5/5
+- **Obs:** Refeição perfeita pra quebrar jejum. Alta proteína (peixe + ovo), fibra (couve + legumes), gordura boa (ovo + peixe), zero ultra-processado. Exatamente o que o LDL e o fígado precisam ver todo dia.
+#alimentacao #almoco #jejum #pos-jejum
