@@ -17,3 +17,11 @@
 - **Nota:** 5/5
 - **Obs:** Refeição perfeita pra quebrar jejum. Alta proteína (peixe + ovo), fibra (couve + legumes), gordura boa (ovo + peixe), zero ultra-processado. Exatamente o que o LDL e o fígado precisam ver todo dia.
 #alimentacao #almoco #jejum #pos-jejum
+
+## 2026-03-16 19:34 — Jantar
+- **Prato:** Peixe grelhado/assado (~200g) + salada de tomate com cebola + purê de abóbora com tempero verde
+- **Calorias estimadas:** ~480 kcal
+- **Macros:** P: ~40g | C: ~35g | G: ~14g
+- **Nota:** 5/5
+- **Obs:** Excelente. Peixe magro + tomate (licopeno, antioxidante) + abóbora (betacaroteno, fibra). Jantar leve, proteico, anti-inflamatório. Perfeito pra fechar o dia.
+#alimentacao #jantar
