@@ -25,3 +25,11 @@
 - **Nota:** 5/5
 - **Obs:** Excelente. Peixe magro + tomate (licopeno, antioxidante) + abóbora (betacaroteno, fibra). Jantar leve, proteico, anti-inflamatório. Perfeito pra fechar o dia.
 #alimentacao #jantar
+
+## 2026-03-17 ~08:00 — Café da manhã (sem jejum)
+- **Prato:** Pão francês com ovo mexido + queijo maturado artesanal (Muai - Fazenda Bom Retiro) + mamão formosa
+- **Calorias estimadas:** ~620 kcal
+- **Macros:** P: ~28g | C: ~60g | G: ~26g
+- **Nota:** 3.5/5
+- **Obs:** Mamão ✅ Ovo ✅ Queijo artesanal maturado é melhor que queijo processado (gordura menos saturada, menos sódio). Pão francês é o ponto fraco — carbo refinado. Trocar por pão integral ou tapioca seria o upgrade natural.
+#alimentacao #cafe-da-manha
