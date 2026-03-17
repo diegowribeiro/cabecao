@@ -27,9 +27,9 @@
 #alimentacao #jantar
 
 ## 2026-03-17 ~08:00 — Café da manhã (sem jejum)
-- **Prato:** Pão francês com ovo mexido + queijo maturado artesanal (Muai - Fazenda Bom Retiro) + mamão formosa
+- **Prato:** Pão francês com ovo mexido + mamão formosa
 - **Calorias estimadas:** ~620 kcal
-- **Macros:** P: ~28g | C: ~60g | G: ~26g
+- **Macros:** P: ~18g | C: ~55g | G: ~16g
 - **Nota:** 3.5/5
 - **Obs:** Mamão ✅ Ovo ✅ Queijo artesanal maturado é melhor que queijo processado (gordura menos saturada, menos sódio). Pão francês é o ponto fraco — carbo refinado. Trocar por pão integral ou tapioca seria o upgrade natural.
 #alimentacao #cafe-da-manha
