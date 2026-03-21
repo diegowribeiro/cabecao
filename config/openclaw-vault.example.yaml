@@ -5,7 +5,7 @@
 # Modelos (economia): o gateway costuma usar ~/.openclaw/openclaw.json — não só este YAML.
 # - Padrão Haiku:  openclaw models set anthropic/claude-haiku-4-5   (veja IDs com: openclaw models list --all)
 # - Sonnet sob demanda no Telegram: /model
-# Guia completo: docs/economia-api.md
+# Guia completo: docs/economia-api.md · Arquitetura: AGENTS.md (raiz do repo)
 
 # Transcrição: Groq (custo-benefício, sem GPU)
 # tools:

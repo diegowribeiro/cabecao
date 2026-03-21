@@ -2,6 +2,8 @@
 
 Plano operacional para **Haiku como padrão**, **Sonnet sob demanda**, **Khoj mais barato**, **crons enxutos** — sem trocar Khoj, OpenClaw nem arquitetura.
 
+**Contexto geral:** [**AGENTS.md**](../AGENTS.md) · **Token Khoj + systemd:** [**khoj-token-passo-a-passo.md**](khoj-token-passo-a-passo.md)
+
 **Onde aplicar:** na VPS (Khoj + OpenClaw). **Repo:** `git pull` em `/opt/cabecao` depois de merge deste guia no GitHub.
 
 ---

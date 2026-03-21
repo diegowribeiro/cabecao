@@ -1,5 +1,7 @@
 # Sincronizar o vault: VPS, Mac e iPhone
 
+**Contexto da stack:** [**AGENTS.md**](../AGENTS.md).
+
 O vault precisa estar em três lugares: **VPS** (onde o Cabeção escreve e o Khoj indexa), **Mac** (Obsidian) e **iPhone** (Obsidian mobile). Duas formas de manter tudo alinhado.
 
 ---

@@ -2,7 +2,15 @@
 
 Tudo fica no repositório **cabecao**: código, scripts e a pasta **vault/**. Você sincroniza o mesmo repo no VPS, Mac e iPhone.
 
+**Arquitetura e estado atual:** leia primeiro **[AGENTS.md](../AGENTS.md)** e o **[índice de docs](INDICE-DOCUMENTACAO.md)**.
+
 > **VPS já criada?** Siga o guia passo a passo: **[implementacao-vps.md](implementacao-vps.md)** (Fases 1–3: vault + Git, Khoj, OpenClaw).
+
+---
+
+## Spec histórica
+
+O arquivo **`stack-spec.md`** na raiz é a especificação v2.1 (histórico). Não substitui **`AGENTS.md`** para decisões atuais.
 
 ---
 
@@ -19,7 +27,7 @@ Tudo fica no repositório **cabecao**: código, scripts e a pasta **vault/**. Vo
 ## 1. Repo cabecao
 
 - Repositório **privado** (GitHub ou GitLab).
-- Já contém: `vault/`, `scripts/`, `docs/`, `stack-spec.md`, etc.
+- Já contém: `vault/`, `scripts/`, `docs/`, `AGENTS.md`, `stack-spec.md` (histórico), etc.
 - Garanta que o primeiro push já foi feito (para o VPS e os dispositivos clonarem depois).
 
 ---
@@ -68,8 +76,9 @@ Script usado: `scripts/vps-cabecao-git-push.sh` (só commita mudanças em `vault
 
 ### 2.4 Fases seguintes na VPS
 
-- **Fase 2:** Instalar Docker, subir Khoj, apontar o content para `/opt/cabecao/vault`. Ver [stack-spec.md](../stack-spec.md) § 5.
-- **Fase 3:** Instalar OpenClaw, configurar Claude + Groq + Telegram, apontar o vault para `/opt/cabecao/vault`, configurar crons (8h, 21h, domingo) e HEARTBEAT. Ver stack-spec § 6.
+- **Fase 2:** Instalar Docker, subir Khoj, apontar o content para `/opt/cabecao/vault`. Ver **[implementacao-vps.md](implementacao-vps.md)** (Fase 2) e **[AGENTS.md](../AGENTS.md)**.
+- **Fase 3:** Instalar OpenClaw, Groq, Telegram, vault em `/opt/cabecao/vault`, crons. Ver **[implementacao-vps.md](implementacao-vps.md)** (Fase 3). Detalhe de token Khoj: **[khoj-token-passo-a-passo.md](khoj-token-passo-a-passo.md)**.
+- **Histórico de desenho:** [stack-spec.md](../stack-spec.md) (v2.1, não substitui `AGENTS.md`).
 
 ---
 

@@ -1,5 +1,9 @@
 # SPEC DE IMPLEMENTAÇÃO — Personal AI Stack v2.1
 
+> **Histórico v2.1.** Estado atual da stack: ver **`AGENTS.md`** na raiz do repo cabeção e **`docs/INDICE-DOCUMENTACAO.md`**.
+
+---
+
 ## Assistente Pessoal com RAG sobre o "Eu" · 100% em VPS (HostGator)
 
 **Versão:** 2.1  

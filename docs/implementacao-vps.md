@@ -2,6 +2,8 @@
 
 Guia passo a passo para subir o sistema na VPS **já criada**. Stack: vault (repo cabecao) + Khoj (RAG) + OpenClaw (agente + Telegram + Groq).
 
+**Antes de instalar:** leia **[AGENTS.md](../AGENTS.md)** (visão atual) e, após Khoj, **[khoj-token-passo-a-passo.md](khoj-token-passo-a-passo.md)** para configurar `KHOJ_UPDATE_TOKEN` na VPS.
+
 ---
 
 ## Pré-requisitos (VPS)

@@ -1,5 +1,9 @@
 # SPEC DE IMPLEMENTAÇÃO — Personal AI Stack v2.1
 
+> **Documento histórico (v2.1, fev/2026).** Não descreve 100% do estado atual de produção (modelos Haiku/Sonnet, paths `/opt/cabecao`, token Khoj via env, crons extras, etc.). Para operar ou evoluir o projeto **hoje**, use primeiro **`AGENTS.md`** na raiz do repositório e o índice **`docs/INDICE-DOCUMENTACAO.md`**.
+
+---
+
 ## Assistente Pessoal com RAG sobre o "Eu" · 100% em VPS (HostGator)
 
 **Versão:** 2.1  

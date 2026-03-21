@@ -2,6 +2,10 @@
 
 Segundo cérebro rodando 24/7 em VPS. Captura texto e áudio pelo Telegram, classifica, salva no vault Obsidian e responde com base no que você já viveu e registrou.
 
+**Documentação viva (arquitetura + segredos + paths):** [**AGENTS.md**](AGENTS.md) · [Índice `docs/`](docs/INDICE-DOCUMENTACAO.md) · [Token Khoj passo a passo](docs/khoj-token-passo-a-passo.md)
+
+> **`stack-spec.md`** é especificação histórica v2.1; o estado atual está em **`AGENTS.md`**.
+
 ---
 
 ## O que é o Cabeção
@@ -207,8 +211,11 @@ cabecao/
 ├── config/
 │   ├── openclaw-vault.example.yaml  ← exemplo de config OpenClaw
 │   └── openclaw-workspace/          ← SOUL.md / USER.md mínimos (copiar p/ ~/.openclaw/workspace na VPS)
+├── AGENTS.md                        ← arquitetura atual (leitura obrigatória para IAs/devs)
 ├── docs/
-│   ├── status-deploy.md             ← histórico do deploy
+│   ├── INDICE-DOCUMENTACAO.md       ← índice de todos os docs
+│   ├── khoj-token-passo-a-passo.md  ← KHOJ_UPDATE_TOKEN na VPS
+│   ├── status-deploy.md             ← snapshot do deploy (atualizar quando mudar)
 │   ├── implementacao-vps.md
 │   ├── economia-api.md              ← Haiku/Sonnet, Khoj, crons (custo)
 │   ├── proximos-passos.md

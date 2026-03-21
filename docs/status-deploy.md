@@ -1,7 +1,10 @@
 # Status do Deploy — Cabeção
 
-**Última atualização:** 2026-03-14 (sessão 2)
-**Status geral:** TUDO CONCLUÍDO E OPERACIONAL ✅
+**Última atualização:** 2026-03-21 (alinhamento com `AGENTS.md` + docs)
+
+**Status geral:** operacional — conferir serviços na VPS se algo mudar.
+
+**Fonte de verdade:** [**AGENTS.md**](../AGENTS.md) (raiz). Este arquivo é **snapshot**; atualize após mudanças de deploy.
 
 ---
 
@@ -34,16 +37,20 @@
 
 ## Crons configurados
 
-### OpenClaw (vários crons — revisar com `openclaw cron list` na VPS)
+### OpenClaw (lista real — **verificar na VPS**)
 
-| Nome | Horário (BRT) | O que faz |
-|------|--------------|-----------|
-| Briefing 8h | Todo dia 8h | Inglês do dia + tarefas do vault + intenção do dia |
-| Check-in 21h | Todo dia 21h | Check-in noturno + salva journal + inglês na resposta |
-| Revisão semanal | Domingo 10h | Loops abertos + padrões da semana + os 3 elefantes |
-| Loop check quarta | Quarta 20h | Cobra tarefas com +5 dias sem fechar |
-| Sessão de negócio | Sábado 10h | Renda passiva/negócio — progresso e próximo passo |
-| Análise mensal | Dia 1 de cada mês 9h | Padrões de humor, sabotadores, conquistas, síntese |
+```bash
+openclaw cron list
+```
+
+A tabela abaixo é **referência**; nomes/horários podem incluir extras (suplementos, negócio, etc.).
+
+| Nome (exemplos) | Horário (BRT) | Notas |
+|-----------------|---------------|--------|
+| Briefing 8h | 8h | Mensagem curta (economia de tokens); ver `docs/economia-api.md` |
+| Check-in 21h | 21h | Idem |
+| Revisão semanal | Domingo 10h | Idem |
+| Outros | variável | Loop quarta, suplementos, sessão negócio, análise mensal — conforme `cron list` |
 
 ### Sistema (crontab)
 
@@ -155,3 +162,4 @@ cd /opt/cabecao/vault && git log --oneline -10
 | Vault não sincroniza | `cat /root/cabecao-sync.log` |
 | Garmin sem dados | `python3 /opt/cabecao/scripts/garmin-sync.py` manualmente; checar `/root/garmin-sync.log` |
 | API key expirou | Atualizar em `auth-profiles.json` + `env.conf` → reiniciar OpenClaw |
+| Reindex Khoj não roda após nota | Definir `KHOJ_UPDATE_TOKEN` no `env.conf` do gateway; ver [khoj-token-passo-a-passo.md](khoj-token-passo-a-passo.md) |
