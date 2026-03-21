@@ -128,7 +128,7 @@ curl -s http://localhost:42110/ | head -20
 1. Acesse `http://IP_DA_VPS:42110` (ou configure um domínio com proxy reverso e HTTPS).
 2. Crie conta de admin.
 3. **Content:** adicione fonte de arquivos apontando para o path do vault dentro do container (ex.: `/vault`). Tipos: Markdown. Reindexação automática (ex.: a cada 30 min).
-4. **Model:** Anthropic, API key (a mesma que usará no OpenClaw), modelo `claude-sonnet-4-5-20250929` (ou o ID atual do Claude Sonnet 4.5).
+4. **Model:** Anthropic, API key (a mesma que usará no OpenClaw). Para **custo no dia a dia**, use **Claude Haiku** como modelo de chat/resposta do Khoj (RAG continua igual; só a síntese fica mais barata). IDs típicos: `claude-haiku-4-5` / `claude-haiku-4-5-20251001` — confira no seletor do Khoj ou no console Anthropic.
 5. **Agente "Mentor Pessoal":** crie um agente com system prompt de conselheiro pessoal, baseado no vault, em português; knowledge base = conteúdo indexado; tools = web search + file access (se disponível).
 
 **Checklist Fase 2**
@@ -148,7 +148,7 @@ curl -s http://localhost:42110/ | head -20
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-Siga o wizard: escolha modelo Claude Sonnet 4.5, informe `ANTHROPIC_API_KEY`, canal Telegram, skill Obsidian (vault).
+Siga o wizard: informe `ANTHROPIC_API_KEY`, canal Telegram, skill Obsidian (vault). Para **economia**, configure o modelo padrão do agente como **Claude Haiku** e deixe **Sonnet** disponível via `/model` no Telegram (ver [economia-api.md](economia-api.md)).
 
 ### 3.2 Variáveis de ambiente
 
@@ -205,17 +205,17 @@ Assim o agente usa as regras de gravação (TOOLS.md), personalidade (PERSONALIT
 ### 3.5 Crons do OpenClaw (horários fixos)
 
 ```bash
-# Briefing 8h (America/Sao_Paulo — ajuste timezone se preciso)
-openclaw cron add --name "Briefing 8h" --cron "0 8 * * *" --session isolated --message "Briefing matinal: calendário, tarefas do vault, clima SP."
+# Briefing 8h (America/Sao_Paulo — ajuste timezone se preciso). Mensagens curtas = menos tokens por sessão isolada.
+openclaw cron add --name "Briefing 8h" --cron "0 8 * * *" --session isolated --message "Briefing: clima SP, tarefas abertas no vault (Inbox), uma pergunta de intenção do dia. Curto."
 
 # Check-in noturno 21h
-openclaw cron add --name "Check-in 21h" --cron "0 21 * * *" --session isolated --message "Check-in noturno: como foi o dia? Highlights e como está se sentindo. Se responder, criar/atualizar Journal/YYYY-MM-DD.md."
+openclaw cron add --name "Check-in 21h" --cron "0 21 * * *" --session isolated --message "Check-in: como foi o dia? Um highlight e humor. Se responder, atualizar Journal/ hoje."
 
 # Revisão semanal domingo 10h
-openclaw cron add --name "Revisão semanal" --cron "0 10 * * 0" --session isolated --message "Revisão semanal: compilar Journal e Meetings da semana, gerar Journal/weekly/YYYY-Www.md, enviar resumo no Telegram."
+openclaw cron add --name "Revisão semanal" --cron "0 10 * * 0" --session isolated --message "Revisão semanal: resumir Journal + Meetings da semana, criar Journal/weekly/YYYY-Www.md se faltar, Telegram só com bullets."
 ```
 
-Ajuste a mensagem e o timezone conforme seu uso.
+Ajuste a mensagem e o timezone conforme seu uso. Detalhes e checklist: [economia-api.md](economia-api.md).
 
 ### 3.6 HEARTBEAT
 

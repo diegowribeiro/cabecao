@@ -41,7 +41,7 @@ Um assistente pessoal que age como mentor, confidente e segundo cérebro. Não �
 | Componente | O que faz | Por que esse |
 |------------|-----------|--------------|
 | **OpenClaw** | Gateway do agente: recebe Telegram, processa, executa, responde | Integra tudo nativamente: Telegram, áudio, shell, crons — sem código custom |
-| **Claude Sonnet 4.6** | LLM para raciocínio e geração | Melhor custo-benefício em qualidade de resposta e contexto longo |
+| **Claude Haiku (padrão) + Sonnet (`/model`)** | LLM no OpenClaw | Haiku no dia a dia; Sonnet quando você escolher — ver [docs/economia-api.md](docs/economia-api.md) |
 | **Groq + Whisper** | Transcrição de áudios do Telegram | Rápido, barato (~US$0,04/h), suporta português, sem GPU na VPS |
 | **Khoj** | RAG sobre o vault — busca semântica nas suas notas | Open source, roda local/Docker, integra com Anthropic |
 | **Vault Obsidian** | Base de conhecimento pessoal em Markdown | Arquivos simples, versionáveis com Git, abrem em qualquer editor |
@@ -151,7 +151,7 @@ Usa o script `/opt/cabecao/scripts/save-note.sh` que:
 - URL interna: `http://localhost:42110` (só acessível na VPS)
 - Admin: `admin@cabecao.local` / `cabecao2026`
 - API token: `9993a591-3d74-4ae0-9c70-afc4c1df5a17`
-- Modelo: `claude-sonnet-4-5-20250929` (Anthropic)
+- Modelo de chat: **Claude Haiku** (economia); ajuste na UI do Khoj se ainda estiver Sonnet
 - Data source: `/vault/**/*.md` (reindexação automática)
 
 **Acessar a UI (quando precisar):**
@@ -187,9 +187,9 @@ ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52
 | Item | Custo |
 |------|-------|
 | VPS HostGator | ~US$ 20–40 |
-| Claude API (OpenClaw + Khoj) | ~US$ 15–25 |
+| Claude API (OpenClaw + Khoj) | variável; tende a cair com Haiku + [economia-api.md](docs/economia-api.md) |
 | Groq (transcrição de áudio) | ~US$ 0–2 |
-| **Total** | **~US$ 35–67** |
+| **Total** | **VPS + API** — monitorar no console Anthropic |
 
 ---
 
@@ -209,6 +209,7 @@ cabecao/
 ├── docs/
 │   ├── status-deploy.md             ← histórico do deploy
 │   ├── implementacao-vps.md
+│   ├── economia-api.md              ← Haiku/Sonnet, Khoj, crons (custo)
 │   ├── proximos-passos.md
 │   └── sync-vault.md
 └── scripts/
@@ -223,6 +224,10 @@ cabecao/
 ## Comandos úteis
 
 ```bash
+# Modelo do agente (VPS): Haiku padrão, Sonnet via /model no Telegram
+openclaw models status
+openclaw models set anthropic/claude-haiku-4-5
+
 # Acessar a VPS
 ssh cabecao
 

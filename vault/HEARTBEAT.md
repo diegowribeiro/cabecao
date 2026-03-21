@@ -27,6 +27,8 @@ Tarefas que o Cabeção executa automaticamente em ciclos ou horários fixos.
 
 ## Heartbeat periódico (~30 min)
 
+**Custo:** este ciclo não deve disparar RAG nem conversa longa. Preferir leitura de diretório + decisão mínima; se não houver nada novo em `Meetings/`, finalize com **`HEARTBEAT_OK` interno** sem mensagem ao Diego. Se **30 min** estiver gerando custo alto no gateway, na VPS reduza a frequência (ex.: 2–4 h) mantendo a mesma lógica — ver o guia `docs/economia-api.md` no repositório **cabecão**.
+
 ### 1. Novos arquivos em Meetings/
 - Verificar se há arquivos novos desde o último ciclo
 - Se houver: enriquecer com action items (se faltando) e notificar no Telegram
