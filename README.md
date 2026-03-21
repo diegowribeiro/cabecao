@@ -205,7 +205,8 @@ cabecao/
 │   ├── HEARTBEAT.md                 ← automações periódicas do agente
 │   └── ...                          ← notas, journal, meetings, etc.
 ├── config/
-│   └── openclaw-vault.example.yaml  ← exemplo de config OpenClaw
+│   ├── openclaw-vault.example.yaml  ← exemplo de config OpenClaw
+│   └── openclaw-workspace/          ← SOUL.md / USER.md mínimos (copiar p/ ~/.openclaw/workspace na VPS)
 ├── docs/
 │   ├── status-deploy.md             ← histórico do deploy
 │   ├── implementacao-vps.md

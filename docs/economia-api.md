@@ -20,16 +20,20 @@ systemctl --user restart openclaw-gateway.service
 
 ---
 
-## 2. Khoj — modelo de chat: Haiku
+## 2. Khoj — modelo de chat: Haiku (**opcional / pausado**)
+
+Pode manter **Sonnet no Khoj** por enquanto; Haiku aqui é só economia na síntese do RAG, não muda arquitetura.
+
+Quando quiser ativar:
 
 1. Túnel SSH se o Khoj só escuta em localhost:  
    `ssh -p 22022 -L 42110:localhost:42110 root@SEU_IP`
 2. Abra `http://localhost:42110` → login admin.
 3. **Settings → AI / Models** (ou equivalente na sua versão).
-4. Defina o modelo de **chat / resposta** para **Claude Haiku** (família 4.5 ou a versão listada como Haiku na Anthropic).
-5. **IDs de referência (Anthropic):** use o ID exibido no console Anthropic ou no seletor do Khoj — em geral algo como `claude-haiku-4-5-20251001` ou alias `claude-haiku-4-5`. O Sonnet pode continuar cadastrado como opção secundária na UI, se existir.
+4. Defina o modelo de **chat / resposta** para **Claude Haiku**.
+5. **IDs de referência (Anthropic):** use o ID do seletor do Khoj — em geral `claude-haiku-4-5` ou sufixo datado.
 
-**Objetivo:** o RAG continua igual; só a **síntese** passa a custar menos.
+**Objetivo:** RAG igual; só a **síntese** mais barata.
 
 ---
 
@@ -94,9 +98,25 @@ Ajuste timezone (`timedatectl` / variáveis do OpenClaw) se precisar de BRT.
 
 ---
 
-## 6. Duplicação de persona (workspace OpenClaw)
+## 6. Persona — uma fonte (`PERSONALITY.md`) + workspace mínimo
 
-Se existir **o mesmo perfil** em `~/.openclaw/workspace/SOUL.md` / `USER.md` **e** em `vault/PERSONALITY.md`, o contexto pode duplicar. Escolha **uma** fonte canônica para biografia longa (recomendado: **só o vault**) e deixe o workspace só com remissões curtas ou links.
+**Problema:** `SOUL.md` e `USER.md` grandes no `~/.openclaw/workspace/` repetem o que já está em `vault/PERSONALITY.md` → mais tokens sem ganho.
+
+**Solução no repo:** versões **enxutas** em `config/openclaw-workspace/SOUL.md` e `USER.md` (apontam para o vault). O conteúdo que estava só no SOUL antigo (**modo crise**, **inglês integrado**) foi incorporado em `vault/PERSONALITY.md`.
+
+**Na VPS (depois de `git pull`):**
+
+```bash
+cd /opt/cabecao && git pull
+TS=$(date +%Y%m%d%H%M%S)
+cp -a ~/.openclaw/workspace/SOUL.md ~/.openclaw/workspace/SOUL.md.bak.$TS
+cp -a ~/.openclaw/workspace/USER.md ~/.openclaw/workspace/USER.md.bak.$TS
+cp /opt/cabecao/config/openclaw-workspace/SOUL.md ~/.openclaw/workspace/SOUL.md
+cp /opt/cabecao/config/openclaw-workspace/USER.md ~/.openclaw/workspace/USER.md
+systemctl --user restart openclaw-gateway.service
+```
+
+Recuperar backup se precisar: `cp ~/.openclaw/workspace/SOUL.md.bak.XXXX SOUL.md`.
 
 ---
 
