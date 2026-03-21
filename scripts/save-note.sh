@@ -6,7 +6,9 @@
 set -euo pipefail
 
 VAULT="/opt/cabecao/vault"
-KHOJ_TOKEN="9993a591-3d74-4ae0-9c70-afc4c1df5a17"
+# Token de API do Khoj (Settings → API). Nunca commitar: use env na VPS, ex.:
+#   export KHOJ_UPDATE_TOKEN="..." em ~/.bashrc ou no mesmo unit que roda o agente.
+KHOJ_TOKEN="${KHOJ_UPDATE_TOKEN:-}"
 TYPE="${1:-inbox}"
 REL_PATH="${2}"
 CONTENT="${3}"
@@ -45,8 +47,10 @@ git add "$REL_PATH"
 git commit -m "vault: add $TYPE — $(basename "$REL_PATH" .md)" --quiet
 git push --quiet
 
-# Reindexar Khoj para RAG ficar atualizado imediatamente
-curl -s -H "Authorization: Bearer $KHOJ_TOKEN" \
-  "http://localhost:42110/api/update?force=true&t=markdown" > /dev/null 2>&1 || true
+# Reindexar Khoj para RAG ficar atualizado imediatamente (se token configurado)
+if [[ -n "$KHOJ_TOKEN" ]]; then
+  curl -s -H "Authorization: Bearer $KHOJ_TOKEN" \
+    "http://localhost:42110/api/update?force=true&t=markdown" > /dev/null 2>&1 || true
+fi
 
 echo "OK: salvo em $REL_PATH e sincronizado"

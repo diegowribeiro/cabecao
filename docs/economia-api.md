@@ -12,7 +12,17 @@ Plano operacional para **Haiku como padrão**, **Sonnet sob demanda**, **Khoj ma
 cd /opt/cabecao && git pull
 ```
 
-Confirme que `vault/PERSONALITY.md` e `vault/HEARTBEAT.md` trazem as regras de eficiência. Reinicie o gateway OpenClaw para recarregar skills se necessário:
+Confirme que `vault/PERSONALITY.md` e `vault/HEARTBEAT.md` trazem as regras de eficiência.
+
+**`save-note.sh` e Khoj:** na VPS, defina **`KHOJ_UPDATE_TOKEN`** (mesmo valor do token de API do Khoj) no ambiente do processo que executa o agente — ex. em `/root/.config/systemd/user/openclaw-gateway.service.d/env.conf`:
+
+```ini
+Environment="KHOJ_UPDATE_TOKEN=o_token_gerado_no_khoj"
+```
+
+Depois: `systemctl --user daemon-reload && systemctl --user restart openclaw-gateway.service`.
+
+Reinicie o gateway OpenClaw após mudanças no vault se necessário:
 
 ```bash
 systemctl --user restart openclaw-gateway.service

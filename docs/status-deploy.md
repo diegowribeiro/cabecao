@@ -34,7 +34,7 @@
 
 ## Crons configurados
 
-### OpenClaw (6 crons)
+### OpenClaw (vários crons — revisar com `openclaw cron list` na VPS)
 
 | Nome | Horário (BRT) | O que faz |
 |------|--------------|-----------|
@@ -57,18 +57,18 @@
 ## Configurações aplicadas
 
 ### OpenClaw
-- Modelo: `claude-sonnet-4-6`
+- Modelo padrão: **Haiku** (`anthropic/claude-haiku-4-5`); Sonnet via `/model` (ver `openclaw models status`)
 - Telegram: `@AssistenteCabecaoBot`, pareado com `@diegowribeiro` (ID 156600487)
 - Áudio: Groq `whisper-large-v3-turbo` (transcrição)
 - Exec allowlist: somente `/opt/cabecao/scripts/save-note.sh`
-- Workspace files: `SOUL.md`, `USER.md`, `IDENTITY.md`, `AGENTS.md`, `TOOLS.md`, `HEARTBEAT.md`, `BOOTSTRAP.md`
+- Workspace: `SOUL.md` / `USER.md` **mínimos** (repo: `config/openclaw-workspace/`); persona longa em **`vault/PERSONALITY.md`**. Demais: `IDENTITY.md`, `AGENTS.md`, `TOOLS.md`, `HEARTBEAT.md`, `BOOTSTRAP.md`
 
 ### Khoj (RAG)
-- Modelo: `claude-sonnet-4-5-20250929`
+- Modelo de chat: conforme UI (Haiku opcional para custo)
 - Data source: `/vault/**/*.md` (reindexação automática)
-- API token: `9993a591-3d74-4ae0-9c70-afc4c1df5a17`
+- API token: **não** versionar; definir `KHOJ_UPDATE_TOKEN` na VPS para `save-note.sh` reindexar após cada nota
 - Acesso UI (via tunnel): `ssh -p 22022 -L 42110:localhost:42110 root@129.121.36.52` → `http://localhost:42110`
-- Admin: `admin@cabecao.local` / `cabecao2026`
+- Admin: credenciais da **sua** instalação (Khoj UI / `.env`)
 
 ### Garmin
 - Credenciais: `/root/.garmin-credentials` (chmod 600)
@@ -84,8 +84,8 @@
 |---------|----------|
 | `/root/.openclaw/openclaw.json` | Config principal do OpenClaw |
 | `/root/.openclaw/exec-approvals.json` | Allowlist de execução (só save-note.sh) |
-| `/root/.openclaw/workspace/SOUL.md` | Personalidade + modo crise + inglês integrado |
-| `/root/.openclaw/workspace/USER.md` | Perfil completo do Diego |
+| `/root/.openclaw/workspace/SOUL.md` | Núcleo; persona longa em `vault/PERSONALITY.md` |
+| `/root/.openclaw/workspace/USER.md` | Identidade mínima; perfil completo no vault |
 | `/root/.openclaw/workspace/IDENTITY.md` | Identidade do Cabeção |
 | `/root/.openclaw/agents/main/agent/auth-profiles.json` | API keys Anthropic e Groq |
 | `/root/.config/systemd/user/openclaw-gateway.service.d/env.conf` | Env vars do gateway |
@@ -128,8 +128,8 @@ cd /root/khoj && docker compose ps
 # Reiniciar OpenClaw
 systemctl --user restart openclaw-gateway.service
 
-# Forçar reindex Khoj
-curl -H "Authorization: Bearer 9993a591-3d74-4ae0-9c70-afc4c1df5a17" \
+# Forçar reindex Khoj (token = mesmo valor que KHOJ_UPDATE_TOKEN)
+curl -H "Authorization: Bearer $KHOJ_UPDATE_TOKEN" \
   "http://localhost:42110/api/update?force=true&t=markdown"
 
 # Testar Garmin sync

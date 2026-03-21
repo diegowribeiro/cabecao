@@ -149,9 +149,9 @@ Usa o script `/opt/cabecao/scripts/save-note.sh` que:
 
 **Config:**
 - URL interna: `http://localhost:42110` (só acessível na VPS)
-- Admin: `admin@cabecao.local` / `cabecao2026`
-- API token: `9993a591-3d74-4ae0-9c70-afc4c1df5a17`
-- Modelo de chat: **Claude Haiku** (economia); ajuste na UI do Khoj se ainda estiver Sonnet
+- Admin e senha: os definidos na **sua** instalação do Khoj (não versionar no Git).
+- **API token** (reindexação via `save-note.sh`): defina na VPS como **`KHOJ_UPDATE_TOKEN`** (mesmo valor do token de API do Khoj). Sem isso, o vault sincroniza pelo Git, mas a reindexação imediata após cada nota não roda.
+- Modelo de chat: **Claude Haiku** (economia, opcional); ajuste na UI do Khoj se ainda estiver Sonnet
 - Data source: `/vault/**/*.md` (reindexação automática)
 
 **Acessar a UI (quando precisar):**
@@ -239,8 +239,8 @@ cd /root/khoj && docker compose ps
 # Reiniciar OpenClaw (após mudanças no vault)
 systemctl --user restart openclaw-gateway.service
 
-# Forçar reindexação do Khoj
-curl -H "Authorization: Bearer 9993a591-3d74-4ae0-9c70-afc4c1df5a17" \
+# Forçar reindexação do Khoj (use o mesmo token que KHOJ_UPDATE_TOKEN na VPS)
+curl -H "Authorization: Bearer $KHOJ_UPDATE_TOKEN" \
   "http://localhost:42110/api/update?force=true&t=markdown"
 
 # Ver logs do OpenClaw
@@ -249,8 +249,8 @@ journalctl --user -u openclaw-gateway.service -f
 # Ver logs do Khoj
 cd /root/khoj && docker compose logs -f khoj
 
-# Salvar nota manualmente (teste)
-bash /opt/cabecao/scripts/save-note.sh inbox "0-Inbox/Inbox.md" \
+# Salvar nota manualmente (teste; sem bash na frente — ver TOOLS.md)
+/opt/cabecao/scripts/save-note.sh inbox "0-Inbox/Inbox.md" \
   "## $(date '+%Y-%m-%d %H:%M')\nTeste manual\n#teste"
 ```
 
