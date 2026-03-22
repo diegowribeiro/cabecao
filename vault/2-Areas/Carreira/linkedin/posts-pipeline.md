@@ -84,3 +84,32 @@ Série: IA como ferramenta real de liderança
 ## PUBLICADOS
 *(histórico)*
 
+
+---
+
+## PUBLICADOS
+
+### ✅ POST 1 — 2026-03-22
+**Contexto > Prompt — como usar IA de verdade no dia a dia**
+
+Nos últimos meses comecei a tratar IA diferente.
+
+Em vez de abrir o chat e digitar uma pergunta, criei um arquivo de contexto:
+
+Quem eu sou, como penso, as regras críticas do negócio, o que nunca pode acontecer. O modelo carrega isso antes de qualquer conversa.
+
+Na prática, consigo transitar entre devops, infra, segurança, compliance, produto e regulatório sem perder o fio... porque o contexto já está lá.
+
+Como fazer isso no Claude:
+
+Crie um arquivo de texto simples (pode chamar de CONTEXT.md). Coloque:
+- Seu papel e responsabilidades
+- As regras do seu negócio que não podem ser ignoradas
+- Seu estilo de comunicação
+- O que você quer evitar nas respostas
+
+Salve isso no contexto de trabalho do Claude. Em projetos recorrentes, salve como um "projeto" no Claude, ele carrega automaticamente.
+
+O ganho real: você para de gastar energia re-explicando contexto e começa a ter conversas que avançam. A IA responde diferente quando sabe com quem está falando. E você acaba economizando muitos tokens.
+
+Configuração de contexto você já começa o jogo ganhando de 1x0.
