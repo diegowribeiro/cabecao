@@ -113,3 +113,25 @@ Salve isso no contexto de trabalho do Claude. Em projetos recorrentes, salve com
 O ganho real: você para de gastar energia re-explicando contexto e começa a ter conversas que avançam. A IA responde diferente quando sabe com quem está falando. E você acaba economizando muitos tokens.
 
 Configuração de contexto você já começa o jogo ganhando de 1x0.
+
+---
+
+### 📅 POST 2 — Publicar quinta 2026-03-27
+**IA como desbloqueio em migração complexa de dados**
+Status: APROVADO — refinar com mais detalhes na quinta antes de postar
+
+Tinha uma migração de infraestrutura de dados travada há meses.
+
+Complexidade real: dependências não documentadas, schemas divergentes, times diferentes tocando a mesma base. Todo mundo sabia que precisava migrar. Ninguém conseguia avançar.
+
+O que desbloqueou: comecei a usar IA de forma diferente no processo.
+
+Não para escrever código. Para pensar junto.
+
+Alimentei o modelo com o contexto da migração: arquitetura atual, restrições, o que já tinha sido tentado e por que não funcionou. A partir daí, cada decisão virou uma conversa — trade-offs mapeados, riscos antecipados, ordem de execução validada antes de mexer em produção.
+
+O que meses de reunião não resolveu, semanas de conversa estruturada com contexto certo resolveu.
+
+O aprendizado: IA não substitui o engenheiro que conhece o sistema. Ela amplifica quem já sabe o que precisa ser feito mas está travado na complexidade.
+
+Contexto certo + problema certo = desbloqueio real.
