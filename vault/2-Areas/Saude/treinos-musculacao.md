@@ -11,6 +11,35 @@ tags: [saude, treino, musculacao, estetica, hipertrofia]
 
 ---
 
+## 📸 Análise Corporal (25/03/2026) — base para o treino
+
+**Pontos fortes:**
+- Pernas bem desenvolvidas (corrida faz o trabalho)
+- Frame grande (1,81m) com bom potencial
+- Postura ok, sem desvios graves
+
+**Prioridades identificadas (do mais urgente pro menos):**
+
+| # | Área | Por quê é prioridade |
+|---|------|----------------------|
+| 🔴 1 | **Ombros (deltoides)** | São o que cria a largura e o efeito V. Atualmente pouco desenvolvidos. Mudar a silhueta mais rápido. |
+| 🔴 2 | **Costas (largura dorsal)** | Dorsais ainda planas. Desenvolver a largura de cima pra baixo cria o V junto com os ombros. |
+| 🟡 3 | **Peito** | Pouco volume. Precisa de mais espessura e definição. |
+| 🟡 4 | **Braços** | Finos. Bíceps e tríceps precisam de volume. |
+| ⚪ 5 | **Pernas** | Já desenvolvidas pela corrida. Manutenção. |
+
+**Sobre a gordura abdominal:**
+BF estimado ~20-23%. Isso vai sumindo com dieta (déficit calórico) — não com mais abdômen. O treino constrói o músculo. A cozinha mostra ele. **Foca na dieta com a mesma seriedade que no treino.**
+
+**Decisão de volume:**
+- Treino A: ombros ganham volume extra (5-6 séries de lateral + 2 exercícios de deltoide posterior)
+- Treino B: costas ganham exercício adicional de largura (Pulldown pegada larga)
+- Treino C: pernas em manutenção — volume menor, qualidade máxima
+
+---
+
+---
+
 ## 📋 Antes de começar (sempre)
 
 - **Aquecimento geral:** 5 min de esteira leve ou bike (não é cardio, é ativar)
@@ -22,6 +51,7 @@ tags: [saude, treino, musculacao, estetica, hipertrofia]
 ---
 
 ## 🅐 TREINO A — Peito + Ombros + Tríceps
+### ⚠️ Prioridade: OMBROS. Eles constroem o V e mudam a silhueta mais rápido que qualquer outro músculo.
 
 ### 💪 PEITO
 
@@ -113,9 +143,9 @@ tags: [saude, treino, musculacao, estetica, hipertrofia]
 
 ---
 
-**5. Elevação Lateral com Halteres — 4 séries × 15 reps | descanso: 60s**
+**5. Elevação Lateral com Halteres — 5 séries × 15 reps | descanso: 60s**
 
-> *"O exercício que mais vejo feito errado na academia. Carga leve, execução perfeita — isso faz o ombro crescer."*
+> *"🔴 PRIORIDADE MÁXIMA. Esse exercício é o que vai mudar sua silhueta mais rápido. Carga leve, execução perfeita — não abre mão de nenhum dos dois."*
 
 **Setup:**
 - Em pé, postura ereta, halter em cada mão ao lado do corpo
@@ -131,12 +161,29 @@ tags: [saude, treino, musculacao, estetica, hipertrofia]
 
 **Dica:**
 - Se fizer 15 reps bonitas, a carga tá certa. Se terminar nas últimas 3 sofrendo e o corpo todo balançando, reduza.
+- **5 séries porque seu deltoide medial precisa de volume.** Não corte essa série.
 
 ---
 
-**6. Face Pull no Cabo — 3 séries × 15 reps | descanso: 60s**
+**5b. Elevação Lateral no Cabo (unilateral) — 3 séries × 15 reps/lado | descanso: 45s**
 
-> *"Esse exercício salva os seus ombros. Deltoide posterior + manguito rotador. Não pule."*
+> *"Cabo mantém tensão constante no músculo — diferente do halter que perde tensão na parte baixa. Complementa perfeitamente."*
+
+**Setup:**
+- Cabo na altura do tornozelo ou chão
+- Segure com a mão do lado oposto ao cabo (braço cruza levemente na frente do corpo)
+- Outra mão segura na máquina para equilíbrio
+
+**Execução:**
+- Sobe o braço lateralmente até 90°, sem girar o tronco
+- Desça com controle (o cabo vai puxar — resista)
+- Faz um lado completo, depois troca
+
+---
+
+**6. Face Pull no Cabo — 4 séries × 15 reps | descanso: 60s**
+
+> *"🔴 PRIORIDADE. Deltoide posterior é o que dá profundidade e definição ao ombro visto de lado. Você tem pouco agora — esse exercício resolve."*
 
 **Setup:**
 - Cabo na altura dos olhos ou levemente acima
@@ -189,8 +236,27 @@ tags: [saude, treino, musculacao, estetica, hipertrofia]
 ---
 
 ## 🅑 TREINO B — Costas + Bíceps
+### ⚠️ Prioridade: LARGURA DORSAL. É a metade de baixo do V. Foca em puxar largo, não apenas pra baixo.
 
 ### 💪 COSTAS
+
+---
+
+**0. Pulldown Pegada Larga Pronada — 4 séries × 12 reps | descanso: 90s** *(exercício novo — abre o treino)*
+
+> *"🔴 PRIORIDADE. Pegada larga ativa o dorsal mais lateralmente — é exatamente o que falta pra criar largura de costas. Aquece e abre o dorsal antes de tudo."*
+
+**Setup:**
+- Pegada pronada BEM além dos ombros (quase nas extremidades da barra)
+- Sente-se com coxas fixas sob o suporte
+- Antes de puxar: empurra os ombros pra baixo e pra trás (depressão escapular)
+- Incline levemente o tronco pra trás (~15-20°)
+
+**Execução:**
+- Puxe a barra até o peito/clavícula (não atrás da cabeça — machuca o pescoço e não ativa mais)
+- Cotovelos apontam pra baixo e levemente pra fora (diferente da pegada fechada)
+- Aperte as escápulas e o dorsal no pico por 1 segundo
+- Sobe com controle total — não deixa o peso te puxar
 
 ---
 
