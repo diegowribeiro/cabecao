@@ -393,6 +393,25 @@ BF estimado ~20-23%. Isso vai sumindo com dieta (déficit calórico) — não co
 
 ---
 
+**7b. YTW com Halteres — 3 séries × 10 reps cada letra | sem descanso entre letras**
+
+> *"Finisher de postura. Trapézio inferior + romboides. É o que combate a corcunda na raiz."*
+
+**Setup:**
+- Banco inclinado ~30-45°, deite de bruços com halteres bem leves (2-4kg — não é orgulho aqui)
+- Cabeça neutra, olhando pro chão
+
+**Execução — 3 posições em sequência sem parar:**
+- **Y:** braços sobem em diagonal pra frente formando um Y — polegar pra cima, segura 2s
+- **T:** braços abrem lateralmente formando um T — cotovelos estendidos, segura 2s
+- **W:** cotovelos dobram e sobem, punhos ficam na altura da cabeça formando um W — rotação externa máxima, segura 2s
+- Desce entre cada letra. Faz 10 de cada antes de descansar.
+
+**Por que funciona:**
+Ativa trapézio inferior e romboides — os músculos que "puxam" as escápulas pra baixo e pra dentro. Exatamente o oposto do que a postura encurvada faz.
+
+---
+
 **8. Rosca Concentrada ou no Cabo — 3 séries × 15 reps | descanso: 45s**
 
 > *"Finisher. Isolamento total. Aqui é sentir a queimação e não deixar o músculo descansar."*

@@ -38,6 +38,7 @@ tags: [saude, treino, cheatsheet]
 | 3 | Remada Serrote c/ Halter | 3 × 12/lado | 60s |
 | 4 | Pullover c/ Halter | 3 × 15 | 60s |
 | 5 | Puxada Pegada Supinada | 3 × 12 | 60s |
+| 🔴7b | **YTW c/ Halteres (postura)** | **3 × 10 cada letra** | — |
 | 6 | Rosca Direta Barra EZ | 3 × 12 | 75s |
 | 7 | Rosca Alternada (supinando) | 3 × 10/lado | 60s |
 | 8 | Rosca Concentrada / Cabo | 3 × 15 | 45s |
