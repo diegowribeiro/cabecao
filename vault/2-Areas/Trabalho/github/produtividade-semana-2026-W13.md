@@ -1,26 +1,15 @@
 ## Semana — 2026-W13
 
-**Total:** 70 PRs + 98 issues + 17 commits
+**Total:** 0 PRs + 12 issues + 17 commits
 
-### PRs (70)
-- Revert "New logging infrastructure"
-- New logging infrastructure
-- Atualiza limite de dias para cancelamento
-- [Feedzai] Adiciona campo opcional Account_info
-- Add auto milestones
-- Altera configuração do cron do data export
-- Refatora a estutura do Mailer
-- Remove estrutura do Rack Routes
-- Adiciona log no endpoint que será descontinuado
-- Add auto-milestones
-### Issues (98)
+### Issues (12)
 - Passagem Conhecimento ClaudeDesktop - CS
 - Relatório Opice / Gif
 - Evidências técnicas para auditoria PIXUGU - KPMG
-- Criar alertas de health do Tempo
-- Solicitação de Diego Ribeiro
-- [pix-in-go] IAM, permissões e criação de filas SQS
 - teste milestone
-- Solicitação de Thiago Novaes
-- Solicitação de Camila Nascimento
 - Solicitação de Rodrigo Sousa do Nascimento
+- Solicitação de Bruna Tossin
+- [incident] Rate limit 429 alia.iugu.com pós-deploy chargeback + platform
+- [infra] Diagnóstico conector Fivetran fortified_terribly — whitelist incompleta (9/374 repos)
+- [processo] Resposta auditoria BCB — itens 8.9 (base PIX) e 8.10 (parecer OT 01/2025)
+- [incident] Investigação forense fraude Lastlink — token vazado + Mercado Bitcoin
