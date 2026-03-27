@@ -1,15 +1,26 @@
 ## Semana — 2026-W13
 
-**Total:** 0 PRs + 12 issues + 17 commits
+**Total:** 17 PRs + 25 issues + 19 commits
 
-### Issues (12)
-- Passagem Conhecimento ClaudeDesktop - CS
-- Relatório Opice / Gif
-- Evidências técnicas para auditoria PIXUGU - KPMG
-- teste milestone
-- Solicitação de Rodrigo Sousa do Nascimento
-- Solicitação de Bruna Tossin
-- [incident] Rate limit 429 alia.iugu.com pós-deploy chargeback + platform
-- [infra] Diagnóstico conector Fivetran fortified_terribly — whitelist incompleta (9/374 repos)
-- [processo] Resposta auditoria BCB — itens 8.9 (base PIX) e 8.10 (parecer OT 01/2025)
-- [incident] Investigação forense fraude Lastlink — token vazado + Mercado Bitcoin
+### PRs (17)
+- Remove datalake reports — migrated to automacao-datalake repo
+- chargeback-report: automated monthly credit risk report for Compliance
+- isaac-report: automated monthly ISAAC reconciliation report
+- fat-manual: fix EMR cross-role S3 with base64 inline + Redshift defaults
+- Fix fat-manual EMR: use bootstrap-installed paths
+- Fix fat-manual EMR: copy scripts to /tmp/ before spark-submit
+- Fix fat-manual: Glue job name typo + non-fatal handling
+- Fix fat-manual workflow: env var injection via dry-run + jq
+- fat-manual: Automate Phases 2-5 (Glue, normalization, EMR, Redshift)
+- Fix PyArrow mixed-type error on parquet write
+### Issues (25)
+- [infra] Criação RDS Sandbox
+- Setup stack LGTM (Loki + Grafana + Tempo + Mimir) + Alloy
+- Estudo do Prometheus HA
+- Migração das aplicações EKS 1.34 (Core)
+- Migrar aplicações cluster EKS 1.34 - Development
+- [suporte] Redeploy aplicação — mesmo commit/hash
+- [suporte] Configuração envs + testes migração (urgente)
+- [suporte] Atualização de certificado em homologação
+- [suporte] Convite/acesso a ferramenta
+- [suporte] Acesso Datadog para novo membro
