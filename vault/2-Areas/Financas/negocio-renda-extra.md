@@ -50,3 +50,4 @@ _(Definir esta semana)_
 |------|----------------|---------------|
 | 2026-03-14 | Arquivo criado | Definir 3 ideias |
 | 2026-03-21 | Sessão avaliação (bloqueio identificado) | Teste de mercado em 1 ideia |
+| 2026-04-04 | Decisão estratégica: **PAUSAR renda extra genérica. Foco no canal documentário pelos próximos 8 semanas.** Se o canal funciona, esse É sua renda extra. | Retomar em junho/2026 se necessário |
